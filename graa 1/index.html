@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wybór Talii Kart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="loginContainer">
+    <form id="loginForm">
+        <label for="username">Wpisz swoją nazwę:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Zaloguj się</button>
+    </form>
+</div>
+
+
+
+<div id="gameContainer" style="display: none;">
+
+    
+  <button id="showMyCardsButton" onclick="displayMyCards()">Moje karty</button>
+
+ <div id="controls">
+  <button id="showRankingButton">Ranking</button>
+  <button id="showAchievementsButton">Osiągnięcia</button>
+</div>
+<div id="achievementsContainer"style="display: none;"
+ >
+  
+</div>  
+
+  
+  <div id="rankingContainer" >
+  
+  </div>
+  
+
+  
+    <div id="myCardsContainer" style="display: none;">
+        <h2>Moje karty</h2>
+        <button onclick="hideMyCards()">Ukryj moje karty</button>
+        <div id="myCards"></div>
+    </div>
+    
+    <h2 id="leaguesTitle">Zacznij Od Wyboru Ligi:</h2>
+
+    <div id="leaguesContainer"></div>
+    
+ 
+<div id="selectedDeckContainer" style="display: none;">
+  <h2>Wybrana talia</h2>
+  <div id="selectedCards"></div>
+
+
+</div>
+
+<audio id="winSound" src="win.mp3" preload="auto" ></audio>
+<audio id="buySound" src="buy_1.mp3" preload="auto"></audio>
+
+
+
+    <div id="cardsDisplay"></div>
+    <button id="drawCardButton" style="display: none;">Losuj</button>
+    <div id="coinsDisplay">Monety: <span id="coinsCount">0</span></div>
+
+    <div id="statsSelection" style="display: none;">
+        <button id="overall" onclick="compareStats('overall')">Ocena ogólna</button>
+        <button id="attack" onclick="compareStats('attack')">Atak</button>
+        <button id="defense" onclick="compareStats('defense')">Obrona</button>
+        <button id="attackBoosterButton" style="display: none;" onclick="applyAttackBooster()">Użyj boostera ataku</button>
+        <button id="defenseBoosterButton" style="display: none;" onclick="applyDefenseBooster()">Użyj boostera obrony</button>
+    </div>
+    
+    <button id="openShopButton" onclick="openShop()">Otwórz sklep</button>
+    
+    <div id="shopContainer" style="display:none;">
+        <h2>Sklep</h2>
+        <button id="showAvailableCards">Pokaż karty do kupienia</button>
+        <button onclick="closeShop()">Zamknij sklep</button>
+        <div id="shopItems"></div>
+    </div>
+
+    <div id="endGameOptions" style="display: none;">
+        <button id="changeNameButton" onclick="changeName()">Powrót do zmiany nazwy</button>
+        <button id="playAgainButton" onclick="playAgain()">Zagraj ponownie</button>
+    </div>
+
+  
+    <div id="gameStatus"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
